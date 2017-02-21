@@ -8,11 +8,18 @@
 
 import UIKit
 
-class ModelDetailController: UIViewController {
-
+class ModelDetailController: UIViewController,UIWebViewDelegate {
+    
+    var model : scrollModel?
+    var webView = UIWebView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.view.backgroundColor = UIColor.white
+        webView = UIWebView.init(frame: CGRect.init(x: 0, y: 0, width: screenWidth, height: screenHeight))
+        webView.delegate = self
+        self.view.addSubview(self.webView)
+        self.webView.loadRequest(URLRequest.init(url: URL.init(string: (self.model?.shareUrl)!)!))
         // Do any additional setup after loading the view.
     }
 

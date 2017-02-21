@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import secondtableViewTry
+//@testable import secondtableViewTry
 
 class secondtableViewTryTests: XCTestCase {
     
